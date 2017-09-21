@@ -1,19 +1,19 @@
 ---
 name: nfs-server
-director_uuid: 8b5a911d-96e7-40dc-a259-a552390f6e7f
+director_uuid: b3efa10a-a3ae-4d3d-99b1-3aaf0bcfdf59
 
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: '3263.12'
+  version: 'latest'
 
-instance_groups: 
+instance_groups:
 - name: nfsserver
-  azs: [env1]
+  azs: [RP01]
   instances: 1
-  networks: 
-    - name: VMNetwork
-      static_ips: 10.193.96.74
+  networks:
+    - name: vmnetwork
+      static_ips: 10.193.53.248
   stemcell: default
   vm_type: small
   persistent_disk_type: '30720'
